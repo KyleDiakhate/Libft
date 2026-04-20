@@ -6,33 +6,30 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 16:28:46 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/17 17:23:39 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/04/20 14:39:05 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 #include <string.h>
 
-
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
-	
-	i = 0; 
+	size_t	i;
 
-	if(n == 0)
+	i = 0;
+	if (n == 0)
 		return (0);
-	while((s1[i] != '\0') && (s1[i] == s2[i]))
+	while ((s1[i] != '\0') && (s1[i] == s2[i]))
 	{
-		if(i < n - 1)
-			i++; 
+		if (i < n - 1)
+			i++;
 		else
 			return (0);
 	}
 	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }
-
+/* 
 int main(void)
 {
 	char *s1;
@@ -43,4 +40,4 @@ int main(void)
 
 	printf("My function: %d\n", ft_strncmp(s1, s2, 4));
 	printf("Original function: %d\n", strncmp(s1, s2, 4)); 
-}
+} */

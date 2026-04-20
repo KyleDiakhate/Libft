@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 17:54:57 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/20 18:20:50 by ltomas-d         ###   ########.fr       */
+/*   Created: 2026/04/20 18:21:16 by ltomas-d          #+#    #+#             */
+/*   Updated: 2026/04/20 19:26:21 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#define LIBFT_H
-#include <stdio.h>
-#include <stddef.h>
+#include "libft.h"
 
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char		*ptr1;
+	unsigned const char	*ptr2;
+	size_t				i;
 
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
-
-void	*ft_memset(void *s, int c, size_t n);
-
-#endif
+	if (!src && !dest)
+		return (NULL);
+	ptr1 = (unsigned char *) dest;
+	ptr2 = (unsigned const char *) src;
+	i = 0;
+	while (i < n)
+	{
+		ptr1[i] = ptr2[i];
+		i++;
+	}
+	return (dest);
+}
