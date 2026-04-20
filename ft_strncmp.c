@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 18:44:43 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/17 19:28:40 by ltomas-d         ###   ########.fr       */
+/*   Created: 2026/04/17 16:28:46 by ltomas-d          #+#    #+#             */
+/*   Updated: 2026/04/17 17:23:39 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
-#include <bsd/string.h>
+#include <string.h>
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
-
-	i = 0;
 	
-	if(size > 0)
+	i = 0; 
+
+	if(n == 0)
+		return (0);
+	while((s1[i] != '\0') && (s1[i] == s2[i]))
 	{
-		while((src[i] != '\0') && (i < size - 1))
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		if(i < n - 1)
+			i++; 
+		else
+			return (0);
 	}
-	return(ft_strlen(src));
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }
 
 int main(void)
 {
-	char dst[5];
-	const char *src;
-	src = "olaaaaa";
-	
-	
-	
-	printf("Original Function: %ld\n", strlcpy(dst, src, 5));
-	printf("My function: %ld\n", ft_strlcpy(dst, src, 5));
+	char *s1;
+	char *s2;
+
+	s1 = "abcd";
+	s2 = "abc";
+
+	printf("My function: %d\n", ft_strncmp(s1, s2, 4));
+	printf("Original function: %d\n", strncmp(s1, s2, 4)); 
 }
