@@ -1,42 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 14:25:57 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/27 15:48:59 by ltomas-d         ###   ########.fr       */
+/*   Created: 2026/04/27 15:39:10 by ltomas-d          #+#    #+#             */
+/*   Updated: 2026/04/27 16:27:24 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char		*dest1;
-	unsigned const char	*src1;
+	const unsigned char	*ptr;
 	size_t				i;
 
-	if (!src && !dest)
-		return (NULL);
-	dest1 = (unsigned char *) dest;
-	src1 = (unsigned const char *) src;
 	i = 0;
-	if (dest < src)
+	ptr = (const unsigned char *) s;
+	while (i < n)
 	{
-		while (i < n)
-		{
-			dest1[i] = src1[i];
-			i++;
-		}
+		if (ptr[i] == (unsigned char) c)
+			return ((void *)&ptr[i]);
+		i++;
 	}
-	i = n;
-	if (dest > src)
-		while (i > 0)
-		{
-			i--;
-			dest1[i] = src1[i];
-		}
-	return (dest);
+	return (NULL);
 }
