@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kyled <kyled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 14:25:57 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/27 15:48:59 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/04/28 22:12:30 by kyled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <string.h>
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*dest1;

@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyled <kyled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 18:05:17 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/28 21:58:41 by kyled            ###   ########.fr       */
+/*   Created: 2026/04/28 22:30:33 by kyled             #+#    #+#             */
+/*   Updated: 2026/04/28 23:12:04 by kyled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void    *ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	size_t	dst_len;
-	size_t	src_len;
+    void *ptr; 
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	i = 0;
-	if ((size == 0) || dst_len >= size)
-		return (dst_len + src_len);
-	while ((dst_len < size - 1) && (src[i]))
-	{
-		dst[dst_len] = src[i];
-		dst_len ++;
-		i++;
-	}
-	dst[dst_len] = '\0';
-	return (dst_len - i + src_len);
+    ptr = malloc(nmemb * size); 
+
+    if(ptr == NULL)
+        return (NULL);
+    ft_memset(ptr, 0, nmemb * size); 
+    
+    return(ptr); 
 }
