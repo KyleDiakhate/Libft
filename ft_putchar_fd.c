@@ -1,40 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kyled <kyled@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 15:12:07 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/29 15:28:51 by kyled            ###   ########.fr       */
+/*   Created: 2026/04/29 16:26:18 by kyled             #+#    #+#             */
+/*   Updated: 2026/04/29 16:37:56 by kyled            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void    ft_putchar_fd(char c, int fd)
 {
-	int	i;
-	int	neg;
-	int	num;
-
-	neg = 1;
-	i = 0;
-	num = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= '\n') || (nptr[i] == ' '))
-	{
-		i++;
-	}
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			neg *= -1;
-		i++;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		num = num * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (num * neg);
+    write(fd, &c, 1);
 }
