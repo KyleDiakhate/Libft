@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 20:22:14 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/04 13:52:25 by ltomas-d         ###   ########.fr       */
+/*   Created: 2026/05/04 16:36:28 by ltomas-d          #+#    #+#             */
+/*   Updated: 2026/05/04 17:20:55 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*ptr;
-	int		len_s1;
-	int		len_s2;
-
-	if ((s1 == NULL) || (s2 == NULL))
+	t_list	*new_list;
+	t_list	*new_node;
+	void	*temp_content;
+	if (!lst || !f)
 		return (NULL);
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	ptr = malloc((len_s1 + len_s2 + 1) * sizeof(char));
-	if (ptr == NULL)
-		return (NULL);
-	ft_strlcpy(ptr, s1, len_s1 + 1);
-	ft_strlcat (ptr, s2, len_s1 + len_s2 + 1);
-	return (ptr);
+	new_list = NULL;
+	while (lst)
+	{
+		temp_content = f(lst->content);
+		new_node = ft_lstnew(temp_content);
+		if(new_node == NULL)
+		{
+			del(temp_content);
+			ft_lstclear(new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, new_node);
+		lst = lst->next;
+	}
+	return (new_list);
 }
