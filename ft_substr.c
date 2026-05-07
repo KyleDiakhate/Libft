@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 19:36:12 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/04 12:36:19 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/07 18:40:52 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ptr[0] = '\0';
 		return (ptr);
 	}
-	if (len_s < len)
+	if (len > len_s - start)
 		len = len_s - start;
 	ptr = malloc((len + 1) * sizeof(char));
 	if (ptr == NULL)

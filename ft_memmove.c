@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 18:12:47 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/04/29 19:06:00 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/07 17:31:43 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	i = n;
 	if (dest > src)
+	{
 		while (i > 0)
 		{
 			i--;
 			dest1[i] = src1[i];
 		}
+	}
 	return (dest);
 }

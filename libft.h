@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:54:57 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/04 16:43:43 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/07 17:25:44 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_lstsize(t_list *lst);
 
 
+
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 char    *ft_strdup(const char *s);
@@ -44,6 +45,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
+char	**ft_split(char const *s, char c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
@@ -66,11 +71,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	ft_lstclear(t_list **lst, void (*del) (void *));
-
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
-
-
 
 #endif

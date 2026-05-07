@@ -6,7 +6,7 @@
 #    By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/20 13:59:25 by ltomas-d          #+#    #+#              #
-#    Updated: 2026/05/04 13:37:54 by ltomas-d         ###   ########.fr        #
+#    Updated: 2026/05/07 18:17:32 by ltomas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,18 @@ SRCS =	ft_isalnum.c \
 		ft_strrchr.c \
 		ft_strtrim.c \
 		ft_substr.c \
+		ft_split.c \
+		ft_lstadd_back.c \
+		ft_lstadd_front.c \
+		ft_lstclear.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstlast.c \
+		ft_lstmap.c \
 		ft_lstnew.c \
+		ft_lstsize.c \
+		ft_striteri.c \
+		ft_strmapi.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
@@ -63,3 +74,5 @@ fclean: clean
 	$(RM) $(NAME)
 	
 re: fclean all
+
+bonus: all

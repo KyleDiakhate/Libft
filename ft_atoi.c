@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 18:11:20 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/04 15:16:43 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/07 18:52:38 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *nptr)
 	neg = 1;
 	i = 0;
 	num = 0;
-	while ((nptr[i] >= '\t' && nptr[i] <= '\n') || (nptr[i] == ' '))
+	while ((nptr[i] >= '\t' && nptr[i] <= '\r') || (nptr[i] == ' '))
 	{
 		i++;
 	}
@@ -38,4 +38,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * neg);
 }
-

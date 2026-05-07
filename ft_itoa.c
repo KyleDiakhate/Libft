@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 16:45:59 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/05 15:05:34 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/07 17:29:49 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,21 @@ static char	*ft_numstr(char *ptr, int n, int cont, int neg)
 	if (neg == 1)
 		ptr[0] = '-';
 	return (ptr);
+}
+
+static int	ft_numlen(int n)
+{
+	int	cont;
+
+	cont = 0;
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n = n / 10;
+		cont++;
+	}
+	return (cont);
 }
 
 char	*ft_itoa(int n)
@@ -44,6 +59,6 @@ char	*ft_itoa(int n)
 	ptr = malloc ((cont + neg + 1) * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
-	ptr = ft_fill(ptr, n, cont, neg);
+	ptr = ft_numstr(ptr, n, cont, neg);
 	return (ptr);
 }
