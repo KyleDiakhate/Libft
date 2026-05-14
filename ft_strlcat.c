@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 18:05:17 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/07 18:52:20 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/11 12:15:04 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	src_len = ft_strlen(src);
 	if (size == 0)
-		return (src_len);		
+		return (src_len);
 	dst_len = ft_strlen(dst);
 	i = 0;
 	tmp_len = dst_len;

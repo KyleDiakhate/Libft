@@ -6,7 +6,7 @@
 #    By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/20 13:59:25 by ltomas-d          #+#    #+#              #
-#    Updated: 2026/05/07 18:17:32 by ltomas-d         ###   ########.fr        #
+#    Updated: 2026/05/13 13:39:22 by ltomas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,4 +75,4 @@ fclean: clean
 	
 re: fclean all
 
-bonus: all
+

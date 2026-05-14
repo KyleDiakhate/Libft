@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 14:19:34 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/04 16:40:25 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/11 16:49:30 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,21 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		last_lst->next = new;
 	}
 }
+
+// #include <stdio.h>
+
+// int main(void)
+// {
+// 	t_list	*lst;
+// 	t_list *aux;
+// 	lst = NULL;
+// 	ft_lstadd_back(&lst, ft_lstnew("Primeiro"));
+// 	ft_lstadd_back(&lst, ft_lstnew("Segundo"));
+// 	ft_lstadd_back(&lst, ft_lstnew("Terceiro"));
+// 	aux = lst;
+// 	while(aux != NULL)
+// 	{
+// 		printf("%s\n", (char *)aux->content);
+// 		aux = aux->next;
+// 	}
+// }

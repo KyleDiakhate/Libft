@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 15:11:22 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/07 18:51:16 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/11 15:59:48 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void	ft_free_array(char **array)
 	char	**tmp;
 
 	tmp = array;
-	while (*array)
+	while (*array != NULL)
 	{
 		free(*array);
 		array++;
@@ -84,10 +84,10 @@ char	**ft_split(char const *s, char c)
 	array = malloc((count + 1) * sizeof(char *));
 	if (array == NULL)
 		return (NULL);
+	ft_bzero(array, (count + 1) * sizeof(char *));
 	fill = ft_fill_array(array, s, c);
 	if (fill == NULL)
 	{
-		ft_free_array(array);
 		return (NULL);
 	}
 	return (array);

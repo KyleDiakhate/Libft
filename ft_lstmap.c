@@ -6,7 +6,7 @@
 /*   By: ltomas-d <ltomas-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 16:36:28 by ltomas-d          #+#    #+#             */
-/*   Updated: 2026/05/07 18:51:06 by ltomas-d         ###   ########.fr       */
+/*   Updated: 2026/05/11 18:38:02 by ltomas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,40 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+// #include <stdio.h>
+// void	d(void *content)
+// {
+// 	free(content);
+// }
+// void	*f(void *content)
+// {
+// 	char *str;
+// 	size_t  i;
+// 	i = 0;
+// 	str = (char *) content;
+// 	while(str[i] != '\0')
+// 	{
+// 		if(str[i] >= 'a' && str[i] <= 'z')
+// 			str[i] = str[i] - 32;
+// 		i++;
+// 	}
+// 	return (str);
+// }
+// int main(void)
+// {
+// 	t_list *new_list;
+// 	t_list *lst;
+// 	t_list *aux;
+// 	lst = NULL;
+// 	ft_lstadd_back(&lst, ft_lstnew(ft_strdup("olaa")));
+// 	ft_lstadd_back(&lst, ft_lstnew(ft_strdup("adeus")));
+// 	ft_lstadd_back(&lst, ft_lstnew(ft_strdup("meu deus")));
+// 	new_list = ft_lstmap(lst, f, d);
+// 	aux = new_list;
+// 	while (aux != NULL)
+// 	{
+// 		printf("%s\n", (char *)aux->content);
+// 		aux = aux->next;
+// 	}
+// 	return (0);
+// }
